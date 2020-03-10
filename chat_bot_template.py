@@ -13,7 +13,6 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-#ACTION_HISTORY = []
 ACTION_COUNT = 0
 
 # Define a few command handlers. These usually take the two arguments update and
@@ -25,23 +24,18 @@ def log(func):
         func(*args, **kwargs)
         update = args[0]
         if update and hasattr(update, "warning"):
-            with open("history.txt", "a") as handle:
+            with open(f"{update.message.chat.id}.txt", "a") as handle:
                 print(func, file=handle)
         if update and hasattr(update, "message") and hasattr(update, "effective_user"):
-            #ACTION_HISTORY.append({
-                #'user': update.effective_user.first_name,
-                #'function': func.__name__,
-                #'message': update.message.text
-            #})
             global ACTION_COUNT
             ACTION_COUNT += 1
             if ACTION_COUNT > 5:
-                f = open("history.txt").readlines()
-                for i in [0, 0, 0, 0, 0]:
-                    f.pop(i)
-                with open("history.txt", "w") as F:
+                f = open(f"{update.message.chat.id}.txt").readlines()
+                for i in range(5):
+                    f.pop(0)
+                with open(f"{update.message.chat.id}.txt", "w") as F:
                     F.writelines(f)
-            with open ("history.txt", "a") as handle:
+            with open (f"{update.message.chat.id}.txt", "a") as handle:
                 print(f"Действие {ACTION_COUNT}:", file=handle)
                 print(f"user: {update.effective_user.first_name}", file=handle)
                 print(f"function: {func.__name__}", file=handle)
@@ -52,6 +46,7 @@ def log(func):
 def start(update: Update, context: CallbackContext):
     """Send a message when the command /start is issued."""
     update.message.reply_text(f'Привет, {update.effective_user.first_name}!')
+    f = open(f"{update.message.chat.id}.txt", "w+")
 
 @log
 def chat_help(update: Update, context: CallbackContext):
@@ -66,10 +61,9 @@ def echo(update: Update, context: CallbackContext):
 @log
 def history(update: Update, context: CallbackContext):
     """Display 5 latest ACTION_HISTORY elements when the command /history is issued."""
-    handle = open("history.txt", "r")
+    handle = open(f"{update.message.chat.id}.txt", "r")
+    update.message.reply_text("Последние 5 действий:")
     update.message.reply_text(handle.read())
-    #for element in ACTION_HISTORY:
-        #update.message.reply_text(element)
     handle.close()
 
 @log
