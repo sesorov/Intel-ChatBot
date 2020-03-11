@@ -48,7 +48,7 @@ def log(func):
             try:
                 os.remove(f"{update.message.chat.id}.json")
             except FileNotFoundError:
-                print("No such file; probably, first use.")
+                print("No such file; probably, first use. Creating new.")
             with open(f"{update.message.chat.id}.json", 'w+') as handle:
                 json.dump(ACTION_LOG, handle, indent=2)
             handle.close()
