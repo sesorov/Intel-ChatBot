@@ -1,6 +1,6 @@
 # Team 11 Telegram Bot
 
-This is a repository for Telegram bot that will be developed by 11th team during Intel Academic Program Python Course.
+[![Build Status](https://travis-ci.com/sesorov/Intel-ChatBot.svg?branch=master)](https://travis-ci.com/sesorov/Intel-ChatBot) This is a repository for Telegram bot that will be developed by 11th team during Intel Academic Program Python Course.
 
 ## Table of Contents
 - [Search](#search)
