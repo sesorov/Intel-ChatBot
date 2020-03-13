@@ -53,7 +53,6 @@ def log(func):
                 print("No such file; probably, first use. Creating new.")
             with open(f"{update.message.chat.id}.json", 'w+') as handle:
                 json.dump(ACTION_LOG, handle, indent=2)
-            handle.close()
             return func(*args, **kwargs)
     return inner
 
@@ -86,7 +85,6 @@ def history(update: Update, context: CallbackContext):
                 output += f"{key}: {value}\n"
             output += "\n"
         update.message.reply_text(output)
-    handle.close()
 
 @log
 def fact(update: Update, context: CallbackContext):

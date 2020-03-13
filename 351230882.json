@@ -1,37 +1,37 @@
 [
   {
-    "Action": "5:",
-    "user": "Alexander",
+    "Action": "19:",
+    "user": "Ado",
     "function": "echo",
-    "message": "Qqqq",
-    "time": "10-Mar-2020 (18:32:27.000000)"
+    "message": "\u0421\u0430\u043d\u044f, \u044f \u0435\u0431\u0430\u043b \u0442\u0432\u043e\u044e \u043c\u0430\u0442\u044c!",
+    "time": "12-Mar-2020 (19:12:09.000000)"
   },
   {
-    "Action": "6:",
-    "user": "Alexander",
-    "function": "chat_help",
-    "message": "/help",
-    "time": "10-Mar-2020 (18:32:30.000000)"
+    "Action": "20:",
+    "user": "Ado",
+    "function": "echo",
+    "message": "\u0421\u0430\u043d\u044f, \u044f \u0435\u0431\u0430\u043b \u0442\u0432\u043e\u044e \u043c\u0430\u0442\u044c!",
+    "time": "12-Mar-2020 (19:12:09.000000)"
   },
   {
-    "Action": "7:",
-    "user": "Alexander",
-    "function": "start",
-    "message": "/start",
-    "time": "10-Mar-2020 (18:32:34.000000)"
+    "Action": "21:",
+    "user": "Ado",
+    "function": "echo",
+    "message": "\u0421\u0430\u043d\u044f, \u044f \u0435\u0431\u0430\u043b \u0442\u0432\u043e\u044e \u043c\u0430\u0442\u044c!\u0421\u0430\u043d\u044f, \u044f \u0435\u0431\u0430\u043b \u0442\u0432\u043e\u044e \u043c\u0430\u0442\u044c!",
+    "time": "12-Mar-2020 (19:12:10.000000)"
   },
   {
-    "Action": "8:",
-    "user": "Alexander",
-    "function": "history",
-    "message": "/history",
-    "time": "10-Mar-2020 (18:32:38.000000)"
+    "Action": "22:",
+    "user": "Ado",
+    "function": "echo",
+    "message": "\u0421\u0430\u043d\u044f, \u044f \u0435\u0431\u0430\u043b \u0442\u0432\u043e\u044e \u043c\u0430\u0442\u044c!",
+    "time": "12-Mar-2020 (19:12:11.000000)"
   },
   {
-    "Action": "9:",
+    "Action": "23:",
     "user": "Alexander",
-    "function": "history",
-    "message": "/history",
-    "time": "10-Mar-2020 (18:32:47.000000)"
+    "function": "fact",
+    "message": "/fact",
+    "time": "13-Mar-2020 (08:10:00.000000)"
   }
 ]
