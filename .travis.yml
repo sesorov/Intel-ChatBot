@@ -2,7 +2,7 @@ language: python
 python:
   - "3.6"
 sudo: false
-script: make test
+script: make chat_bot_template
 #after_success:
 #  - bash <(curl -s https://codecov.io/bash)
 notifications:
