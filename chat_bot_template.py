@@ -63,7 +63,12 @@ def start(update: Update, context: CallbackContext):
 @handle_command
 def chat_help(update: Update, context: CallbackContext):
     """Send a message when the command /help is issued."""
-    update.message.reply_text('Введи команду /start для начала. ')
+    update.message.reply_text("Welcome! You're using the 11'th team bot.")
+    update.message.reply_text("Type:\n<b>/start</b> to start the bot\n" +
+                              "<b>/help</b> to get list of commands\n" +
+                              "<b>/history</b> to get your 5 last actions\n" +
+                              "<b>/fact</b> to get the top fact from cat-fact\n" +
+                              "<b>/example</b> to see an example of image processing.", parse_mode=telegram.ParseMode.HTML)
 
 
 @handle_command
@@ -87,7 +92,7 @@ def load_history(update: Update):
 
 @handle_command
 def history(update: Update, context: CallbackContext):
-    """Display 5 latest ACTION_HISTORY elements when the command /history is issued."""
+    """Display 5 latest actions when the command /history is issued."""
     save_history(update)
     update.message.reply_text("Last 5 actions:")
     with open(f"{update.message.chat.id}.json", "r") as handle:
